@@ -1,154 +1,77 @@
-<!--
-/**
-Copyright (c) 2014 BrightPoint Consulting, Inc.
-
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-*/
--->
 <!DOCTYPE html>
-<head>
-    <meta HTTP-EQUIV="X-UA-COMPATIBLE" CONTENT="IE=EmulateIE9" >
-    <meta charset="UTF-8">
-    <script type="text/javascript" src="scripts/d3.min.js"></script>
-    <script type="text/javascript" src="scripts/utils.js"></script>
-    <script type="text/javascript" src="scripts/radialProgress.js"></script>
-    <script type="text/javascript" src="scripts/line.js"></script>
+    <head>
+        <meta HTTP-EQUIV="X-UA-COMPATIBLE" CONTENT="IE=EmulateIE9" >
+        <meta charset="UTF-8">
 
-    <link type="text/css" rel="stylesheet" href="styles/style.css">
+        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles/style.css">
 
-</head>
+    </head>
 
-<body>
-
-<div id='outer'>
-    <div id="main">
-        <div class="dashboard-element-container">
-            <div id="revenue" class="radial-size-fix"></div>
-            <div class="graph-container">
-                <div class="graph" id="revenue-graph"></div>
-            </div>
-            <div class="c-top">
-                <h1>Revenue</h1>
-                <h2>200.000€</h2>
-            </div>
-            <div class="c-bottom">
-                <div class="b-left">
-                    <h2 id="revenue-tab">Tablet</h2>
-                    <h4>120.000€</h4>
+    <body>
+        <div id='outer'>
+            <div id="main">
+                <div class="dashboard-element-container">
+                    <div id="revenue" class="radial-size-fix"></div>
+                    <div class="graph-container">
+                        <div class="graph" id="revenue-graph"></div>
+                    </div>
+                    <div class="c-top">
+                        <h1>Revenue</h1>
+                        <h2 id="revenue-total">200.000€</h2>
+                    </div>
+                    <div class="c-bottom">
+                        <div class="b-left">
+                            <h2 id="revenue-tab">Tablet</h2>
+                            <h4 id="revenue-tab-number">120.000€</h4>
+                        </div>
+                        <div class="b-right">
+                            <h2 id="revenue-smrt">Smartphone</h2>
+                            <h4><b id="revenue-smrt-pctg">20%</b> <span id="revenue-smrt-number">80.000</span>€</h4>
+                        </div>
+                    </div>
                 </div>
-                <div class="b-right">
-                    <h2 id="revenue-smrt">Smartphone</h2>
-                    <h4><b>20%</b> 80.000€</h4>
+                <div class="dashboard-element-container">
+                    <div id="impressions" class="radial-size-fix"></div>
+                    <div class="graph-container">
+                        <div class="graph" id="impressions-graph"></div>
+                    </div>
+                    <div class="c-top">
+                        <h1>Impressions</h1>
+                        <h2 id="impressions-total">200.000€</h2>
+                    </div>
+                    <div class="c-bottom">
+                        <div class="b-left">
+                            <h2 id="impressions-tab">Tablet</h2>
+                            <h4 id="impressions-tab-number">120.000€</h4>
+                        </div>
+                        <div class="b-right">
+                            <h2 id="impressions-smrt">Smartphone</h2>
+                            <h4><b id="impressions-smrt-pctg">20%</b> <span id="impressions-smrt-number">80.000</span>€</h4>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="dashboard-element-container">
-            <div id="impressions" class="radial-size-fix"></div>
-            <div class="graph-container">
-                <div class="graph" id="impressions-graph"></div>
-            </div>
-            <div class="c-top">
-                <h1>Impressions</h1>
-                <h2>200.000€</h2>
-            </div>
-            <div class="c-bottom">
-                <div class="b-left">
-                    <h2 id="impressions-tab">Tablet</h2>
-                    <h4>120.000€</h4>
-                </div>
-                <div class="b-right">
-                    <h2 id="impressions-smrt">Smartphone</h2>
-                    <h4><b>20%</b> 80.000€</h4>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="dashboard-element-container">
-            <div id="visits" class="radial-size-fix"></div>
-            <div class="graph-container">
-                <div class="graph" id="visits-graph"></div>
-            </div>
-            <div class="c-top">
-                <h1>Visits</h1>
-                <h2>200.000€</h2>
-            </div>
-            <div class="c-bottom">
-                <div class="b-left">
-                    <h2 id="visits-tab">Tablet</h2>
-                    <h4>120.000€</h4>
-                </div>
-                <div class="b-right">
-                    <h2 id="visits-smrt">Smartphone</h2>
-                    <h4><b>20%</b> 80.000€</h4>
+                <div class="dashboard-element-container">
+                    <div id="visits" class="radial-size-fix"></div>
+                    <div class="graph-container">
+                        <div class="graph" id="visits-graph"></div>
+                    </div>
+                    <div class="c-top">
+                        <h1>Visits</h1>
+                        <h2 id="visits-total">200.000€</h2>
+                    </div>
+                    <div class="c-bottom">
+                        <div class="b-left">
+                            <h2 id="visits-tab">Tablet</h2>
+                            <h4 id="visits-tab-number">120.000€</h4>
+                        </div>
+                        <div class="b-right">
+                            <h2 id="visits-smrt">Smartphone</h2>
+                            <h4><b id="visits-smrt-pctg">20%</b> <span id="visits-smrt-number">80.000</span>€</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-
-<div id="metrics">
-</div>
-
-
-<script language="JavaScript">
-
-
-
-
-    document.getElementById("revenue-tab").style.color = colorLuminance('#53d02c', 0.1);
-    document.getElementById("revenue-smrt").style.color = colorLuminance('#53d02c', -0.2);
-    line('#revenue-graph', '#53d02c', '#f3faf0');
-    var rp1 = radialProgress(document.getElementById('revenue'), '#53d02c')
-            .diameter(150)
-            .value(78)
-            .render();
-
-    document.getElementById("impressions-tab").style.color = colorLuminance('#16c8e5', 0.1);
-    document.getElementById("impressions-smrt").style.color = colorLuminance('#16c8e5', -0.2);
-    line('#impressions-graph', '#16c8e5', '#f3fafa');
-    var rp2 = radialProgress(document.getElementById('impressions'), '#16c8e5')
-            .diameter(150)
-            .value(12)
-            .render();
-
-
-    document.getElementById("visits-tab").style.color = colorLuminance('#f9c206', 0.1);
-    document.getElementById("visits-smrt").style.color = colorLuminance('#f9c206', -0.2);
-    line('#visits-graph', '#f9c206', '#fafaf0');
-    var rp3 = radialProgress(document.getElementById('visits'), '#f9c206')
-            .diameter(150)
-            // .minValue(100)
-            // .maxValue(200)
-            .value(60)
-            .render();
-
-
-
-
-
-</script>
-
-</body>
+    </body>
 </html>

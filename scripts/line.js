@@ -24,19 +24,19 @@ function line(elId, color, bgColor){
 	var startingDate = new Date(2012, 8, 18);		
 	var total = 0;
 	// this is a date object. each of our data objects is attached to a date
-	for (var i = 0; i < 10; i++) {					
+	for (var i = 0; i < 50; i++) {					
 	// loop 10 times to create 10 data objects
 		var tmpObj 	= {};							
 			// this is a temporary data object
 		tmpObj.date = new Date(startingDate.getFullYear(), startingDate.getMonth(), startingDate.getDate()+i);				
 			// the data for this data object. Increment it from the starting date.
-		tmpObj.DAU 	= Math.round(Math.random() * 30);  			
+		tmpObj.DAU 	= Math.round(700+Math.random() * 30);  			
 			// random value. Round it to a whole number.
 		data.push(tmpObj); 							
 			// push the object into our data array
 	}
 
-	var width = 120, height = 100;
+	var width = 120, height = 140;
 	var margin = {top: 30, right: 0, bottom: 40, left: 0}, width = width - margin.left - margin.right, height = height - margin.top - margin.bottom;
 	// these are graph size settings
 

@@ -17,3 +17,7 @@ function colorLuminance(hex, lum) {
 
 	return rgb;
 }
+
+function formatNumber (num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+}
