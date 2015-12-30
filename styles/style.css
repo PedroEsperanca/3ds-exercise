@@ -1,35 +1,22 @@
-/**
- Copyright (c) 2014 BrightPoint Consulting, Inc.
-
- Permission is hereby granted, free of charge, to any person
- obtaining a copy of this software and associated documentation
- files (the "Software"), to deal in the Software without
- restriction, including without limitation the rights to use,
- copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the
- Software is furnished to do so, subject to the following
- conditions:
-
- The above copyright notice and this permission notice shall be
- included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- OTHER DEALINGS IN THE SOFTWARE.
- */
-
-.background {
-    fill: #FFFFFF;
-    fill-opacity: 0.01;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
 }
 
-.component {
-    fill: #e1e1e1;
+#outer{
+    margin-top:40px; 
+    padding:10px;
+}
+
+#main{
+    width: 660px;
+    height: 200px;
+    margin: 0px auto;
+}
+
+.background {
+    fill: #F99;
+    fill-opacity: 0.01;
 }
 
 .component .label {
@@ -58,4 +45,112 @@
 .radial-svg {
     display: block;
     margin: 0 auto;
+}
+
+#test .arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+}
+
+#outer {
+    background:#FFFFFF;
+    border-radius: 5px;
+    color: #000;
+}
+
+.radial {
+    border-radius: 3px;
+    background: #FFFFFF;
+    color: #000;
+
+}
+
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+
+}
+
+.dashboard-element-container{
+    position: relative;
+    float: left;
+    width: 120px;
+    margin: 50px;
+}
+
+.dashboard-element-container .c-top{
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    text-align: center;
+}
+.dashboard-element-container .c-top h1{
+    margin: 0;
+    font-size: 15px;
+    opacity: 0.4;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+.dashboard-element-container .c-top h2{
+    margin: 0;
+    font-size: 19px;
+    font-weight: 400;
+}
+.dashboard-element-container .c-bottom{
+    width: calc(100% + 70px);
+    font-size: 9px;
+    position: absolute;
+    top: 135px;
+    margin: 0px 0px 1px -35px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.dashboard-element-container .c-bottom .b-left{
+    float: left;
+}
+.dashboard-element-container .c-bottom .b-right{
+    float: right;
+    text-align: right;
+}
+
+.dashboard-element-container .c-bottom .b-left h2,
+.dashboard-element-container .c-bottom .b-right h2 {
+    margin: 0
+}
+
+.dashboard-element-container .c-bottom .b-left h4,
+.dashboard-element-container .c-bottom .b-right h4 {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 100;
+    opacity: 0.7;
+    margin-top: 3px;
+}
+
+.dashboard-element-container .graph {
+    position: absolute;
+}
+
+.dashboard-element-container .graph-container {
+    position: absolute;
+    top: 32px;
+    left: 3px;
+    overflow: hidden;
+    width: 111px;
+    height: 80px;
+    border-radius: 83px;
+}
+
+.radial-size-fix {
+    transform: scale(1.2,1.2);
+    top: 14px;
+    position: relative;
 }

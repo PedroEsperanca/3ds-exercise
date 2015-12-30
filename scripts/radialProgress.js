@@ -1,29 +1,5 @@
-/**
- Copyright (c) 2014 BrightPoint Consulting, Inc.
 
- Permission is hereby granted, free of charge, to any person
- obtaining a copy of this software and associated documentation
- files (the "Software"), to deal in the Software without
- restriction, including without limitation the rights to use,
- copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the
- Software is furnished to do so, subject to the following
- conditions:
-
- The above copyright notice and this permission notice shall be
- included in all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- OTHER DEALINGS IN THE SOFTWARE.
- */
-
-function radialProgress(parent) {
+function radialProgress(parent, color) {
     var _data=null,
         _duration= 1000,
         _selection,
@@ -70,6 +46,7 @@ function radialProgress(parent) {
 
 
             var background = enter.append("g").attr("class","component")
+                .style("fill", colorLuminance(color, 0.1))
                 .attr("cursor","pointer")
                 .on("click",onMouseClick);
 
@@ -85,19 +62,12 @@ function radialProgress(parent) {
                 .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
                 .attr("d", _arc);
 
-            background.append("text")
-                .attr("class", "label")
-                .attr("transform", "translate(" + _width/2 + "," + (_width + _fontSize) + ")")
-                .text(_label);
-            var g = svg.select("g")
-                .attr("transform", "translate(" + _margin.left + "," + _margin.top + ")");
-
-
             _arc.endAngle(_currentArc);
             enter.append("g").attr("class", "arcs");
             var path = svg.select(".arcs").selectAll(".arc").data(data);
             path.enter().append("path")
                 .attr("class","arc")
+                .style("fill", colorLuminance(color, -0.2))
                 .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
                 .attr("d", _arc);
 
@@ -108,22 +78,7 @@ function radialProgress(parent) {
                 .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
                 .attr("d", _arc2);
 
-
-            enter.append("g").attr("class", "labels");
-            var label = svg.select(".labels").selectAll(".label").data(data);
-            label.enter().append("text")
-                .attr("class","label")
-                .attr("y",_width/2+_fontSize/3)
-                .attr("x",_width/2)
-                .attr("cursor","pointer")
-                .attr("width",_width)
-                // .attr("x",(3*_fontSize/2))
-                .text(function (d) { return Math.round((_value-_minValue)/(_maxValue-_minValue)*100) + "%" })
-                .style("font-size",_fontSize+"px")
-                .on("click",onMouseClick);
-
             path.exit().transition().duration(500).attr("x",1000).remove();
-
 
             layout(svg);
 
@@ -142,10 +97,6 @@ function radialProgress(parent) {
                     path2.transition().delay(_duration).duration(_duration)
                         .attrTween("d", arcTween2);
                 }
-
-                label.datum(Math.round(ratio*100));
-                label.transition().duration(_duration)
-                    .tween("text",labelTween);
 
             }
 
@@ -191,7 +142,7 @@ function radialProgress(parent) {
         _height=_width;
         _fontSize=_width*.2;
         _arc.outerRadius(_width/2);
-        _arc.innerRadius(_width/2 * .85);
+        _arc.innerRadius(_width/2 * .90);
         _arc2.outerRadius(_width/2 * .85);
         _arc2.innerRadius(_width/2 * .85 - (_width/2 * .15));
     }
