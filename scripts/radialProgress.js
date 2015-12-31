@@ -140,11 +140,11 @@ define('radialprogress', function (require) {
         function measure() {
             _width=_diameter - _margin.right - _margin.left - _margin.top - _margin.bottom;
             _height=_width;
-            _fontSize=_width*.2;
+            _fontSize=_width*0.2;
             _arc.outerRadius(_width/2);
-            _arc.innerRadius(_width/2 * .90);
-            _arc2.outerRadius(_width/2 * .85);
-            _arc2.innerRadius(_width/2 * .85 - (_width/2 * .15));
+            _arc.innerRadius(_width/2 * 0.90);
+            _arc2.outerRadius(_width/2 * 0.85);
+            _arc2.innerRadius(_width/2 * 0.85 - (_width/2 * 0.15));
         }
 
 
