@@ -2,7 +2,7 @@ require([
 	'../bower_components/d3/d3.min',
 	'line',
 	'utils', 
-	'radialprogress', 
+	'radialProgress', 
 	'models', 
 	'views'
 ], function() {
