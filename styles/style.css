@@ -9,7 +9,7 @@ body{
 }
 
 #main{
-    width: 660px;
+    width: 780px;
     height: 200px;
     margin: 0px auto;
 }
@@ -82,7 +82,7 @@ body{
     position: relative;
     float: left;
     width: 120px;
-    margin: 50px;
+    margin: 70px;
 }
 
 .dashboard-element-container .c-top{
@@ -104,11 +104,11 @@ body{
     font-weight: 400;
 }
 .dashboard-element-container .c-bottom{
-    width: calc(100% + 70px);
+    width: calc(100% + 90px);
     font-size: 9px;
     position: absolute;
     top: 135px;
-    margin: 0px 0px 1px -35px;
+    margin: 0px 0px 1px -40px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
@@ -129,9 +129,9 @@ body{
 .dashboard-element-container .c-bottom .b-left h4,
 .dashboard-element-container .c-bottom .b-right h4 {
     margin: 0;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 100;
-    opacity: 0.7;
+    opacity: 0.5;
     margin-top: 3px;
 }
 
