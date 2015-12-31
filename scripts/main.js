@@ -1,6 +1,7 @@
 require([
 	'../bower_components/d3/d3.min',
-	'line','utils', 
+	'line',
+	'utils', 
 	'radialprogress', 
 	'models', 
 	'views'
