@@ -4,9 +4,7 @@
 <http://pedroesperanca.github.io/D3JS-radials-with-graphics-inside/>
 
 ## Testing
-run
-````jasmine````
-from the command line
+run ``jasmine`` from the command line
 
 ## Improvements needed
 * use a CSS extension language for scalability
