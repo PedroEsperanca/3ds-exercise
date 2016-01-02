@@ -137,16 +137,17 @@ body{
 
 .dashboard-element-container .graph {
     position: absolute;
+    top: 29px;
 }
 
 .dashboard-element-container .graph-container {
     position: absolute;
-    top: 32px;
-    left: 3px;
+    top: -6px;
+    left: -3px;
     overflow: hidden;
-    width: 111px;
-    height: 80px;
-    border-radius: 83px;
+    width: 126px;
+    height: 124px;
+    border-radius: 78px;
 }
 
 .radial-size-fix {
